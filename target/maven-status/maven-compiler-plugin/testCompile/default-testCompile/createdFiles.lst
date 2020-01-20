@@ -1,0 +1,3 @@
+com\miage\altea\tp\pokemon_type_api\repository\PokemonTypeRepositoryImplTest.class
+com\miage\altea\tp\pokemon_type_api\controller\PokemonTypeControllerTest.class
+com\miage\altea\tp\pokemon_type_api\service\PokemonTypeServiceImplTest.class

@@ -1,0 +1,9 @@
+com\miage\altea\tp\pokemon_type_api\bo\PokemonType.class
+com\miage\altea\tp\pokemon_type_api\bo\Sprites.class
+com\miage\altea\tp\pokemon_type_api\repository\PokemonTypeRepository.class
+com\miage\altea\tp\pokemon_type_api\repository\PokemonTypeRepositoryImpl.class
+com\miage\altea\tp\pokemon_type_api\bo\Stats.class
+com\miage\altea\tp\pokemon_type_api\service\PokemonTypeService.class
+com\miage\altea\tp\pokemon_type_api\service\PokemonTypeServiceImpl.class
+com\miage\altea\tp\pokemon_type_api\Application.class
+com\miage\altea\tp\pokemon_type_api\controller\PokemonTypeController.class
