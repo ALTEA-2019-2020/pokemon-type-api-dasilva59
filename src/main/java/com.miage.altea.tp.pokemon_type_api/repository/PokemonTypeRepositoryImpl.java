@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 @Repository
@@ -19,14 +20,15 @@ public class PokemonTypeRepositoryImpl implements PokemonTypeRepository {
 
     public PokemonTypeRepositoryImpl() {
         try {
-            InputStream f=this.getClass().getResourceAsStream("/pokemons.json");
-            var pokemonsStream = this.getClass().getResourceAsStream("/pokemons.json");
+            var pokemonsStream = new ClassPathResource("pokemons.json").getInputStream();
+
             var objectMapper = new ObjectMapper();
             var pokemonsArray = objectMapper.readValue(pokemonsStream, PokemonType[].class);
             this.pokemons = Arrays.asList(pokemonsArray);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     @Override
@@ -56,4 +58,15 @@ public class PokemonTypeRepositoryImpl implements PokemonTypeRepository {
 
         return this.pokemons;
     }
+
+    @Override
+    public List<PokemonType> findAllPokemonByType(List<String> types){
+        List<PokemonType> found=new ArrayList<>();
+        for(PokemonType p :this.pokemons) {
+            if(p.getTypes().containsAll(types))
+                found.add(p);
+        }
+        return found;
+    }
+
 }
