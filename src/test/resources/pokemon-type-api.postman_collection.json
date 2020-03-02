@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "8cf3d8df-a65b-4f57-8721-0d833ddd1032",
+		"name": "pokemon-type-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/pokemon-types/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "136cda7a-f93a-4d9d-b41f-2c49b1c92699",
+						"exec": [
+							"pm.test(\"Bulbasaur\", function () {\r",
+							"    var bulbasaur = pm.response.json();\r",
+							"    pm.expect(bulbasaur.id).to.eq(1);\r",
+							"    pm.expect(bulbasaur.name).to.eq(\"Bulbasaur\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pokemon-types/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemon-types",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pokemon-types/1bis",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "136cda7a-f93a-4d9d-b41f-2c49b1c92699",
+						"exec": [
+							"pm.test(\"all pokemon types\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eq(151);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "fr",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/pokemon-types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemon-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pokemon-types/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "136cda7a-f93a-4d9d-b41f-2c49b1c92699",
+						"exec": [
+							"pm.test(\"all pokemon types\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eq(151);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Bulbasaur\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].name).to.eq(\"Bulbasaur\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Ivysaur\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].name).to.eq(\"Ivysaur\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "fr",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/pokemon-types/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemon-types",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pokemon-types/french",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "136cda7a-f93a-4d9d-b41f-2c49b1c92699",
+						"exec": [
+							"pm.test(\"all pokemon types\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eq(151);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"bulbizarre\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].name).to.eq(\"Bulbizarre\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Herbizarre\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].name).to.eq(\"Herbizarre\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "fr",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/pokemon-types/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pokemon-types",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
