@@ -1,16 +1,11 @@
 package com.miage.altea.tp.pokemon_type_api.controller;
 
 import com.miage.altea.tp.pokemon_type_api.bo.PokemonType;
-import com.miage.altea.tp.pokemon_type_api.repository.PokemonTypeRepositoryImpl;
 import com.miage.altea.tp.pokemon_type_api.service.PokemonTypeService;
-import com.miage.altea.tp.pokemon_type_api.service.PokemonTypeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 
 @RestController
@@ -27,6 +22,8 @@ public class PokemonTypeController {
     PokemonType getPokemonTypeFromId(@PathVariable int id){
        return this.ss.getPokemonType(id);
     }
+
+
 
     @GetMapping()
     @ResponseBody
@@ -50,6 +47,10 @@ public class PokemonTypeController {
 
 @GetMapping(value="/")
     public List<PokemonType> getAllPokemonTypes() {
-      return this.ss.getAllPokemonTypes();
+      List<PokemonType> p=new ArrayList<>();
+      p=this.ss.getAllPokemonTypes();
+    Collections.sort(p, Comparator.comparingLong(PokemonType::getId));
+    return p;
+
     }
 }

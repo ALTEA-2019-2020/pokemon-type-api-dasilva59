@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.miage.altea.tp.pokemon_type_api.repository.PokemonTypeRepositoryImplTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in com.miage.altea.tp.pokemon_type_api.repository.PokemonTypeRepositoryImplTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 s - in com.miage.altea.tp.pokemon_type_api.repository.PokemonTypeRepositoryImplTest

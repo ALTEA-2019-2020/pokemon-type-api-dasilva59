@@ -12,7 +12,8 @@ class PokemonTypeServiceImplTest {
     @Test
     void pokemonTypeRepository_shouldBeCalled_whenFindById(){
         var pokemonTypeRepository = mock(PokemonTypeRepository.class);
-        var pokemonTypeService = new PokemonTypeServiceImpl(pokemonTypeRepository);
+        var pokemonTypeService = new PokemonTypeServiceImpl();
+        pokemonTypeService.setPokemonTypeRepository(pokemonTypeRepository);
 
         pokemonTypeService.getPokemonType(25);
 
@@ -22,8 +23,8 @@ class PokemonTypeServiceImplTest {
     @Test
     void pokemonTypeRepository_shouldBeCalled_whenFindAll(){
         var pokemonTypeRepository = mock(PokemonTypeRepository.class);
-        var pokemonTypeService = new PokemonTypeServiceImpl(pokemonTypeRepository);
-
+        var pokemonTypeService = new PokemonTypeServiceImpl();
+        pokemonTypeService.setPokemonTypeRepository(pokemonTypeRepository);
         pokemonTypeService.getAllPokemonTypes();
 
         verify(pokemonTypeRepository).findAllPokemonType();
@@ -43,6 +44,6 @@ class PokemonTypeServiceImplTest {
     void pokemonTypeRepository_shouldBeAutowired_withSpring(){
         var context = new AnnotationConfigApplicationContext("com.miage.altea.tp.pokemon_type_api");
         var service = context.getBean(PokemonTypeServiceImpl.class);
-        assertNotNull(service.pokemonTypeRepository);
+        assertNotNull(service.getPokemonTypeRepository());
     }
 }
