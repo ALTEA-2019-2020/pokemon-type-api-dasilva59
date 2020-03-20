@@ -3,6 +3,7 @@ package com.miage.altea.tp.pokemon_type_api.service;
 import com.miage.altea.tp.pokemon_type_api.bo.PokemonType;
 import com.miage.altea.tp.pokemon_type_api.repository.PokemonTypeRepository;
 import com.miage.altea.tp.pokemon_type_api.repository.TranslationRepository;
+import com.miage.altea.tp.pokemon_type_api.repository.TranslationRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
@@ -16,16 +17,17 @@ public class PokemonTypeServiceImpl implements PokemonTypeService{
 
         private PokemonTypeRepository pokemonTypeRepository;
 
+        @Autowired
         private TranslationRepository translationRepository;
 
-    public PokemonTypeServiceImpl(){ }
-
+    public PokemonTypeServiceImpl(){this.translationRepository=new TranslationRepositoryImpl(); }
 
     @Override
     public PokemonType getPokemonType(int id) {
         Locale loc=LocaleContextHolder.getLocale();
         String n=this.translationRepository.getPokemonName(id,loc);
-        PokemonType p=this.getPokemonTypeRepository().findPokemonTypeById(id);
+        PokemonType p=this.pokemonTypeRepository.findPokemonTypeById(id);
+        if(p!=null)
         p.setName(n);
         return p;
     }

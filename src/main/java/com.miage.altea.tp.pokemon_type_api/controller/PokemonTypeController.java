@@ -26,26 +26,24 @@ public class PokemonTypeController {
 
 
     @GetMapping()
-    @ResponseBody
     List<PokemonType> getPokemonTypeByName(@RequestParam (required = false)String name,@RequestParam (required = false)String types){
         if(name!=null){
-            List<PokemonType> result=new ArrayList<>();
-            result.add(this.ss.getPokemonTypeByName(name));
-            return result;
-
+            PokemonType p=ss.getPokemonTypeByName(name);
+            return Arrays.asList(p);
         }
         if(types!=null){
             String[] result=types.split(",");
             List<String> r=Arrays.asList(result);
             return this.ss.getAllPokemonByTypes(r);
         }
+
         return null;
     }
 
 
 
 
-@GetMapping(value="/")
+@GetMapping("/")
     public List<PokemonType> getAllPokemonTypes() {
       List<PokemonType> p=new ArrayList<>();
       p=this.ss.getAllPokemonTypes();
