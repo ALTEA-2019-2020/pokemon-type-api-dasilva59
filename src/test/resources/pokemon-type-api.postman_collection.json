@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/pokemon-types/1",
+			"name": "Get one pokemon",
 			"event": [
 				{
 					"listen": "test",
@@ -24,25 +24,42 @@
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "6239a2ce-fd68-431e-8775-6d27fc518336",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types/1",
-					"protocol": "http",
+					"raw": "https://pokemons-apielsa.herokuapp.com/pokemon-types/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemons-apielsa",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"pokemon-types",
 						"1"
 					]
-				}
+				},
+				"description": "Get pokemon with id 1"
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/pokemon-types/1bis",
+			"name": "Get all pokemons",
 			"event": [
 				{
 					"listen": "test",
@@ -59,31 +76,49 @@
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "6239a2ce-fd68-431e-8775-6d27fc518336",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
 						"key": "Accept-Language",
-						"value": "fr",
 						"type": "text",
+						"value": "fr",
 						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types",
-					"protocol": "http",
+					"raw": "https://pokemons-apielsa.herokuapp.com/pokemon-types/",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemons-apielsa",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
-						"pokemon-types"
+						"pokemon-types",
+						""
 					]
-				}
+				},
+				"description": "Get all pokemons"
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/pokemon-types/",
+			"name": "Get all pokemons with tests",
 			"event": [
 				{
 					"listen": "test",
@@ -110,6 +145,21 @@
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "6239a2ce-fd68-431e-8775-6d27fc518336",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -120,12 +170,13 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types/",
-					"protocol": "http",
+					"raw": "https://pokemons-apielsa.herokuapp.com/pokemon-types/",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemons-apielsa",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"pokemon-types",
 						""
@@ -135,7 +186,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/pokemon-types/french",
+			"name": "Get all pokemons in french",
 			"event": [
 				{
 					"listen": "test",
@@ -162,6 +213,21 @@
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "6239a2ce-fd68-431e-8775-6d27fc518336",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -171,12 +237,13 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/pokemon-types/",
-					"protocol": "http",
+					"raw": "https://pokemons-apielsa.herokuapp.com/pokemon-types/",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pokemons-apielsa",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"pokemon-types",
 						""
