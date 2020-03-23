@@ -11,3 +11,6 @@ Les routes sont en mode GET:
  
  - /pokemon-types avec deux pathparameters name et types de type string. Cela permet soit une recherche par nom de pokemon quand le name est renseigné ou par type. Le parâmètre type est de de type string mais peu en regroupé plusieurs. Exemple types="typa1,type2...."
  Seuls les pokemons possédant tous ces types seront retournés. 
+
+
+une collection postman pokemon-type-api.postman_collection.json peut être trouvée dans src/test/resources.
