@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping(value ="/pokemon-types")
 public class PokemonTypeController {
@@ -42,7 +42,7 @@ public class PokemonTypeController {
 
 
 
-
+    @CrossOrigin
 @GetMapping("/")
     public List<PokemonType> getAllPokemonTypes() {
       List<PokemonType> p=new ArrayList<>();
